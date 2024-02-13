@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
+use App\Http\Controllers\ControllerAuthentication;
+use Illuminate\Http\Request;/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login',[ControllerAuthentication ::class,'login']);
+Route::get('registration',[ControllerAuthentication::class, 'registration']);
+Route::post('/register-user',[ControllerAuthentication:: class, 'registerUser'])->name('register-user');
+Route::get('/test',[ControllerAuthentication ::class,'test']);
