@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login',[ControllerAuthentication ::class,'login']);
-Route::get('registration',[ControllerAuthentication::class, 'registration']);
+Route::get('/registration',[ControllerAuthentication::class, 'registration']);
 Route::post('/register-user',[ControllerAuthentication:: class, 'registerUser'])->name('register-user');
-Route::get('/test',[ControllerAuthentication ::class,'test']);
+Route::get('/login-user',[ControllerAuthentication ::class,'loginUser'])->name('login-user');
+Route::get('/dashboard',[ControllerAuthentication ::class,'dashboard']);
+Route:: get('/logout',[ControllerAuthentication ::class,'logout']);
